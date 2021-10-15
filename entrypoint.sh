@@ -4,7 +4,10 @@
 set -e
 
 OWNER="$(echo $GITHUB_REPOSITORY| cut -d'/' -f 1)"
-echo $OWNER
+REPO_NAME="$(echo $GITHUB_REPOSITORY| cut -d'/' -f 2)"
+echo "$OWNER"
+echo "$GITHUB_REPOSITORY"
+echo "$OWNER.github.io/$REPO_NAME"
 
 if [[ "$INPUT_ADOC_FILE_EXT" != .* ]]; then 
     INPUT_ADOC_FILE_EXT=".$INPUT_ADOC_FILE_EXT"; 
