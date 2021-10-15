@@ -5,9 +5,7 @@ set -e
 
 OWNER="$(echo $GITHUB_REPOSITORY| cut -d'/' -f 1)"
 REPO_NAME="$(echo $GITHUB_REPOSITORY| cut -d'/' -f 2)"
-echo "$OWNER"
-echo "$GITHUB_REPOSITORY"
-echo "$OWNER.github.io/$REPO_NAME"
+
 
 if [[ "$INPUT_ADOC_FILE_EXT" != .* ]]; then 
     INPUT_ADOC_FILE_EXT=".$INPUT_ADOC_FILE_EXT"; 
@@ -15,6 +13,11 @@ fi
 
 # Steps represent a sequence of tasks that will be executed as part of the job
 echo "Configure git"
+echo "$OWNER"
+echo "$GITHUB_REPOSITORY"
+echo "$OWNER.github.io/$REPO_NAME"
+echo ">>>>"
+
 apk add git -q > /dev/null
 apk add openssh-client -q > /dev/null
 
