@@ -4,6 +4,7 @@
 set -e
 
 OWNER="$(echo $GITHUB_REPOSITORY| cut -d'/' -f 1)"
+echo $OWNER
 
 if [[ "$INPUT_ADOC_FILE_EXT" != .* ]]; then 
     INPUT_ADOC_FILE_EXT=".$INPUT_ADOC_FILE_EXT"; 
@@ -110,3 +111,6 @@ fi
 
 echo "Pushing changes back to the remote repository"
 git push -f --set-upstream origin gh-pages
+
+echo "visit $OWNER.github.io/adoc_starter/" 
+echo $GITHUB_REPOSITORY
