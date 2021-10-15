@@ -109,8 +109,8 @@ if ! ssh -T git@github.com > /dev/null 2>/dev/null; then
     git remote add origin $URL
 fi
 
-echo "Pushing changes back to the remote repository"
-git push -f --set-upstream origin gh-pages
-
 echo "visit $OWNER.github.io/adoc_starter/" 
 echo $GITHUB_REPOSITORY
+
+echo "Pushing changes back to the remote repository"
+git push -f --set-upstream origin gh-pages
